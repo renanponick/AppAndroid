@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">compMovel Renan Ponick</string>
     <string name="app_hello">Hello World.</string>
+    <string name="second_App">Segunda app Computacao Movel.</string>
 </resources>
