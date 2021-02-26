@@ -2,4 +2,16 @@
     <string name="app_name">compMovel Renan Ponick</string>
     <string name="app_hello">Hello World.</string>
     <string name="second_App">Segunda app Computacao Movel.</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="usuario">Usuário</string>
+    <string name="senha">Senha</string>
+    <string name="login">Login</string>
+
+    <string name="first_num">Número 1</string>
+    <string name="second_num">Número 2</string>
+    <string name="som">+</string>
+    <string name="sub">-</string>
+    <string name="div">/</string>
+    <string name="mul">x</string>
 </resources>
