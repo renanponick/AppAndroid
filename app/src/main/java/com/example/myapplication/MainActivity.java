@@ -9,71 +9,67 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private static final String CATEGORIA = "SENAC";
-    private int fNum, sNum;
+    EditText tFirstNum, tSecondNum;
+    TextView res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_calculadora);
 
+        res = (TextView) findViewById(R.id.result);
+        tFirstNum = (EditText) findViewById(R.id.tFirstNum);
+        tSecondNum = (EditText) findViewById(R.id.tSecondNum);
+
         Button btSom = (Button) findViewById(R.id.btSom);
         Button btSub = (Button) findViewById(R.id.btSub);
         Button btDiv = (Button) findViewById(R.id.btDiv);
         Button btMul = (Button) findViewById(R.id.btMult);
 
-        btSom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText tFirstNum = (EditText) findViewById(R.id.tFirstNum);
-                EditText tSecondNum = (EditText) findViewById(R.id.tSecondNum);
-                fNum = Integer.parseInt(tFirstNum.getText().toString());
-                sNum = Integer.parseInt(tSecondNum.getText().toString());
-                conta(fNum, sNum, 1);
-            }
-        });
-        btSub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText tFirstNum = (EditText) findViewById(R.id.tFirstNum);
-                EditText tSecondNum = (EditText) findViewById(R.id.tSecondNum);
-                fNum = Integer.parseInt(tFirstNum.getText().toString());
-                sNum = Integer.parseInt(tSecondNum.getText().toString());
-                conta(fNum, sNum, 2);
-            }
-        });
-        btDiv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText tFirstNum = (EditText) findViewById(R.id.tFirstNum);
-                EditText tSecondNum = (EditText) findViewById(R.id.tSecondNum);
-                fNum = Integer.parseInt(tFirstNum.getText().toString());
-                sNum = Integer.parseInt(tSecondNum.getText().toString());
-                conta(fNum, sNum, 3);
-            }
-        });
-        btMul.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText tFirstNum = (EditText) findViewById(R.id.tFirstNum);
-                EditText tSecondNum = (EditText) findViewById(R.id.tSecondNum);
-                fNum = Integer.parseInt(tFirstNum.getText().toString());
-                sNum = Integer.parseInt(tSecondNum.getText().toString());
-                conta(fNum, sNum, 4);
-            }
-        });
+        btSom.setOnClickListener(onClickSom());
+        btSub.setOnClickListener(onClickSub());
+        btDiv.setOnClickListener(onClickMul());
+        btMul.setOnClickListener(onClickDiv());
     }
 
-    private void conta(int fNum, int sNum, int sinal) {
-        TextView res = (TextView) findViewById(R.id.result);
-        int teste = fNum + sNum;
-        if (sinal == 1) {
-            res.setText('a');
-        } else if (sinal == 2) {
-            res.setText('a');
-        } else if (sinal == 3) {
-            res.setText('a');
-        } else {
-            res.setText('a');
-        }
+    private View.OnClickListener onClickSom(){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                float fNum = Float.parseFloat(tFirstNum.getText().toString());
+                float sNum = Float.parseFloat(tSecondNum.getText().toString());
+                res.setText(String.valueOf(fNum+sNum));
+            }
+        };
+    }
+    private View.OnClickListener onClickSub(){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                float fNum = Float.parseFloat(tFirstNum.getText().toString());
+                float sNum = Float.parseFloat(tSecondNum.getText().toString());
+                res.setText(String.valueOf(fNum-sNum));
+            }
+        };
+    }
+    private View.OnClickListener onClickDiv(){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                float fNum = Float.parseFloat(tFirstNum.getText().toString());
+                float sNum = Float.parseFloat(tSecondNum.getText().toString());
+                res.setText(String.valueOf(fNum*sNum));
+            }
+        };
+    }
+    private View.OnClickListener onClickMul(){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                float fNum = Float.parseFloat(tFirstNum.getText().toString());
+                float sNum = Float.parseFloat(tSecondNum.getText().toString());
+                res.setText(String.valueOf(fNum/sNum));
+            }
+        };
     }
 }
