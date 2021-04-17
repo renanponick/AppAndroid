@@ -1,6 +1,6 @@
 # CollegeListAndroid
 
-Contém um exercicio de Android
+Contém o exercicio de uma Calculadora desenvolvido no Android Studio
 
 ## Branches e Commits
 
